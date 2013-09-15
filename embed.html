@@ -1,0 +1,62 @@
+<html>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      text-rendering: optimizeLegibility;
+      overflow: hidden;
+    }
+
+    * {-webkit-transition: all .2s ease-in-out;}
+
+    .bower-badge {display:block;}
+
+      .bower-badge__clipboard {
+        display: block;
+        margin-top: 3px;
+        opacity: 0;
+        overflow: hidden;
+        -webkit-transform: translateX(-10%);
+      }
+
+      .bower-badge__clipboard,
+      .bower-badge__link {position:absolute;}
+
+      .bower-badge__clipboard__input { font-size: 1.2em; }
+
+
+    /* Selected state */
+      #install-instruction:target {
+        -webkit-transform: translateX(25%);
+        opacity: 1;
+      }
+  </style>
+
+  <span class="bower-badge">
+    <span id="install-instruction" class="bower-badge__clipboard">
+      <input class="span.bower-badge__clipboard__input" value="bower install pkgname" onClick="this.select()">
+    </span>
+
+    <a href="#install-instruction" class="bower-badge__link">
+      <img src="bower-logo.png" width="32" height="32" class="bower-badge__bird">
+    </a>
+  </span>
+
+  <script>
+    var params = function () {
+      var vars = [], hash;
+      var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+      for(var i = 0; i < hashes.length; i++) {
+        hash = hashes[i].split('=');
+        vars.push(hash[0]);
+        vars[hash[0]] = hash[1];
+      }
+      return vars;
+    }();
+
+    var init = function () {
+      var input = document.querySelector('#install-instruction input');
+      input.value = 'bower install ' + params.pkgname;
+    }();
+  </script>
+</html>
