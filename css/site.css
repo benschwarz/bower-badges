@@ -1,0 +1,45 @@
+@import "../components/pure/src/base/css/normalize.css";
+
+@import "../components/pure/src/forms/css/forms-core.css";
+@import "../components/pure/src/forms/css/forms.css";
+
+@import "../components/pure/src/grids/css/grids-core.css";
+@import "../components/pure/src/grids/css/grids-units.css";
+
+
+
+/* global resets */
+main { display: block; }
+
+body {
+  font-family: "Helvetica Neue", Helvetica, sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  line-height: 24px;
+
+  color: #543729;
+  background-color: #FFCC2F;
+}
+
+.h1 { font-size: 4.2em; }
+.h2 { font-weight: normal; font-size: 1.4em; }
+
+main {
+  margin: 0 auto;
+  padding: 1.5em;
+  width: 740px;
+  background-color: white;
+}
+
+textarea {
+  width: 100%;
+  font-size: 1.1em;
+  font-family: "Harmonia Sans Mono Std", monospace;
+}
+
+
+/* header */
+.header { }
+.header__logo { float: left; margin-top: -.2em; margin-right: .2em; }
+
+/*  */

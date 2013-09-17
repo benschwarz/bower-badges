@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Bower badges</title>
+  <link rel="stylesheet" href="./css/site.css">
+  <script src="./components/html5shiv/dist/html5shiv.js"></script>
+</head>
+<body ng-app="BowerBadges">
+
+  <main ng-controller="CodeSnippetController">
+    <header class="header">
+      <h1 class="h1">
+        <img class="header__logo" src="./bower-logo.png">
+        Bower buttons
+      </h1>
+      <h2 class="h2">Add bower buttons to your project readme or website to help users get started as quickly as possible</h2>
+    </header>
+
+    <form class="pure-form pure-form-stacked">
+      <fieldset>
+        <label for="project-name">Bower project name</label>
+        <input ng-model="projectName" id="project-name" name="project-name" placeholder="gallery-css">
+      </fieldset>
+
+      <fieldset>
+        <div class="pure-g">
+          <div class="pure-u-1-3">
+            <label class="pure-checkbox" for="text-only">
+              <input ng-model="activeSnippet" id="text-only" type="radio" name="button-edition" value="text" checked>
+              Textual instructions
+            </label>
+          </div>
+
+          <div class="pure-u-1-3">
+            <label class="pure-checkbox" for="image-only">
+              <input ng-model="activeSnippet" id="image-only" type="radio" name="button-edition" value="image">
+              Image only
+            </label>
+          </div>
+
+          <div class="pure-u-1-3">
+            <label class="pure-checkbox" for="bird-interactive">
+              <input ng-model="activeSnippet" id="bird-interactive" type="radio" name="button-edition" value="embed">
+              Interactive embed
+            </label>
+          </div>
+        </div>
+      </fieldset>
+    </form>
+
+    <div ng-show="activeSnippet === 'text'">
+      <h3>Preview</h3>
+      <textarea onClick="this.select()" rows="4"># You can easily install {{projectName}} is by using Bower, a package manager for front-end components.
+
+`bower install {{projectName}}`</textarea>
+    </div>
+
+    <div ng-show="activeSnippet === 'image'">
+      <h3>Preview</h3>
+      <img src="badge@2x.png" width="130" height="30">
+
+      <h3>Code</h3>
+      <textarea  onClick="this.select()" rows="2"><img src="http://benschwarz.github.io/bower-badges/badge@2x.png" width="130" height="30"></textarea>
+    </div>
+
+    <div ng-show="activeSnippet === 'embed'">
+      <h3>Preview</h3>
+      <iframe src="http://benschwarz.github.io/bower-badges/embed.html?pkgname=gallery-css" width="160" height="32" allowtransparency="true" frameborder="0" scrolling="0"></iframe>
+
+      <h3>Code</h3>
+      <textarea onClick="this.select()" rows="3"><iframe src="http://benschwarz.github.io/bower-badges/embed.html?pkgname={{projectName}}" width="160" height="32" allowtransparency="true" frameborder="0" scrolling="0"></iframe></textarea>
+    </div>
+
+  </main>
+
+  <script src="./components/angular-unstable/angular.min.js"></script>
+  <script src="./js/code-snippet-app.js"></script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+body {
+  margin: 0;
+  padding: 0;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  overflow: hidden;
+}
+
+* {
+  transition: all .2s ease-in-out;
+}
+
+.bower-badge {display:block;}
+
+  .bower-badge__clipboard {
+    display: block;
+    margin-top: 3px;
+    opacity: 0;
+    overflow: hidden;
+    transform: translateX(-10%);
+  }
+
+  .bower-badge__clipboard,
+  .bower-badge__link {position:absolute;}
+
+  .bower-badge__clipboard__input { font-size: 1.2em; }
+
+
+/* Selected state */
+  #install-instruction:target {
+    transform: translateX(25%);
+    opacity: 1;
+  }
