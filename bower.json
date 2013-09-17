@@ -1,0 +1,9 @@
+{
+  "name": "bower-badges",
+  "version": "0.0.1",
+  "dependencies": {
+    "html5shiv": "~3.6.2",
+    "pure": "~0.2.1",
+    "angular-unstable": "~1.1.5"
+  }
+}
