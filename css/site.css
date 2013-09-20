@@ -6,7 +6,9 @@
 @import "../components/pure/src/grids/css/grids-core.css";
 @import "../components/pure/src/grids/css/grids-units.css";
 
-
+*, *:before, *:after {
+    -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+}
 
 /* global resets */
 main { display: block; }
@@ -24,22 +26,19 @@ body {
 .h1 { font-size: 4.2em; }
 .h2 { font-weight: normal; font-size: 1.4em; }
 
-main {
+main, footer {
   margin: 0 auto;
-  padding: 1.5em;
+  padding: 3em;
   width: 740px;
   background-color: white;
 }
 
+footer a { color: #EF5734; }
+footer a:hover { text-decoration: none; }
+
 textarea {
   width: 100%;
-  font-size: 1.1em;
   font-family: "Harmonia Sans Mono Std", monospace;
 }
 
-
-/* header */
-.header { }
 .header__logo { float: left; margin-top: -.2em; margin-right: .2em; }
-
-/*  */

@@ -51,7 +51,7 @@
 
     <div ng-show="activeSnippet === 'text'">
       <h3>Preview</h3>
-      <textarea onClick="this.select()" rows="4"># You can easily install {{projectName}} is by using Bower, a package manager for front-end components.
+      <textarea onClick="this.select()" rows="4"># You can easily install {{projectName}} by using Bower, a package manager for front-end components. (See bower.info for more details)
 
 `bower install {{projectName}}`</textarea>
     </div>
@@ -73,6 +73,9 @@
     </div>
 
   </main>
+  <footer>
+      <small>another <a href="//germanforblack.com">ben schwarz</a> joint. mit licence. get <a href="//github.com/benschwarz/bower-badges">the source</small>
+  </footer>
 
   <script src="./components/angular-unstable/angular.min.js"></script>
   <script src="./js/code-snippet-app.js"></script>
