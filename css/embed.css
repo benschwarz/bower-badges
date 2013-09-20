@@ -4,30 +4,47 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   overflow: hidden;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-* {
-  transition: all .2s ease-in-out;
-}
+* {transition: all .2s ease-in-out;}
 
 .bower-badge {display:block;}
 
   .bower-badge__clipboard {
-    display: block;
     margin-top: 3px;
-    opacity: 0;
-    overflow: hidden;
-    transform: translateX(-10%);
+    transform: perspective(400px) rotateX(180deg);
+  }
+
+  .bower-badge__link-bird {
+    float: left;
+    width: 32px;
+    height: 32px;
+    background: url('/bower-logo.png') no-repeat;
+    background-size: cover;
+  }
+
+  .bower-badge__link {text-decoration: none;}
+
+  .bower-badge__link-label {
+    display: block;
+    float: left;
+    margin-top: .2em;
+    margin-right: -1em;
+    padding: .3em 1.4em .4em .6em;
+    font-size: .8em;
+    text-shadow: 0 1px 0 black;
+    color: white;
+    background: linear-gradient(#5e5e5e, #343534);
+    border-radius: 3px;
   }
 
   .bower-badge__clipboard,
   .bower-badge__link {position:absolute;}
 
-  .bower-badge__clipboard__input { font-size: 1.2em; }
+  /* Selected state */
+  .bower-badge__clipboard,
+  .bower-badge__link {backface-visibility: hidden;}
 
-
-/* Selected state */
-  #install-instruction:target {
-    transform: translateX(25%);
-    opacity: 1;
-  }
+  #install-instruction:target {transform: perspective(400px) rotateX(0deg);}
+  #install-instruction:target + .bower-badge__link {transform: perspective(400px) rotateX(180deg);}

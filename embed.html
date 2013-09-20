@@ -7,14 +7,15 @@
     </span>
 
     <a href="#install-instruction" class="bower-badge__link">
-      <img src="bower-logo.png" width="32" height="32" class="bower-badge__bird">
+      <span class="bower-badge__link-label">get this with bower</span>
+      <span class="bower-badge__link-bird"></span>
     </a>
   </span>
 
   <script>
     var params = function () {
       var vars = [], hash;
-      var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+      var hashes = window.location.search.replace(/^\?/, '').split('&');
       for(var i = 0; i < hashes.length; i++) {
         hash = hashes[i].split('=');
         vars.push(hash[0]);
