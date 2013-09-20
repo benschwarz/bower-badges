@@ -1,5 +1,12 @@
 module.exports = function (grunt) {
   grunt.initConfig({
+    watch: {
+      dev: {
+        files: ['css/*'],
+        tasks: ['autoprefixer']
+      }
+    },
+
     autoprefixer: {
       options: {
         browsers: ['last 2 version']
@@ -12,6 +19,7 @@ module.exports = function (grunt) {
     }
   });
 
+  grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-autoprefixer');
   grunt.registerTask('default', ['autoprefixer']);
 };

@@ -4,6 +4,7 @@
   "description": "Show that your project is available in Bower by using a bower badge!",
   "devDependencies": {
     "grunt": "~0.4.1",
-    "grunt-autoprefixer": "~0.3.0"
+    "grunt-autoprefixer": "~0.3.0",
+    "grunt-contrib-watch": "~0.5.3"
   }
 }
