@@ -27,7 +27,9 @@ body {
   float: left;
   width: 32px;
   height: 32px;
-  background: url('../bower-logo.png') no-repeat;
+  background: url('../bower-logo.png');
+  background: none, url('../bower-logo.svg');
+  background-repeat: no-repeat;
   background-size: cover;
 }
 
