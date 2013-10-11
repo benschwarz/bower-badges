@@ -3,10 +3,10 @@
 
   <span class="bower-badge">
     <span id="install-instruction" class="bower-badge__clipboard">
-      <input class="span.bower-badge__clipboard__input" value="bower install pkgname" onClick="this.select()">
+      <input class="bower-badge__clipboard__input" value="bower install pkgname">
     </span>
 
-    <a href="#install-instruction" class="bower-badge__link">
+    <a href="#install-instruction" class="bower-badge__link" onClick="selectText()">
       <span class="bower-badge__link-label">get this with bower</span>
       <span class="bower-badge__link-bird"></span>
     </a>
@@ -28,5 +28,9 @@
       var input = document.querySelector('#install-instruction input');
       input.value = 'bower install ' + params.pkgname;
     }();
+
+    var selectText = function() {
+      document.getElementById('install-instruction').children[0].select();
+    };
   </script>
 </html>

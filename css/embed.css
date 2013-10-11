@@ -43,11 +43,27 @@ body {
   }
 
   .bower-badge__clipboard,
-  .bower-badge__link {position:absolute;}
+  .bower-badge__link {
+    position:absolute;
+    width: 100%;
+  }
+  .bower-badge__clipboard__input { width: 100%; }
+
+  /* Unselected state */
+  .bower-badge__link {
+    transform: perspective(400px) translate3d(0,0,0);
+  }
+
+  .bower-badge__clipboard {
+    transform: perspective(400px) translate3d(0,0,-200px);
+    opacity:0;
+  }
 
   /* Selected state */
-  .bower-badge__clipboard,
-  .bower-badge__link {backface-visibility: hidden;}
-
-  #install-instruction:target {transform: perspective(400px) rotateX(0deg);}
-  #install-instruction:target + .bower-badge__link {transform: perspective(400px) rotateX(180deg);}
+  #install-instruction:target {
+    transform: perspective(400px) translate3d(0,0,0);
+    opacity: 1;
+  }
+  #install-instruction:target + .bower-badge__link {
+    transform: perspective(400px) translate3d(0,10px,0) rotateX(-90deg);
+  }

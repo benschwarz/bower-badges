@@ -54,25 +54,39 @@ body {
 .bower-badge__clipboard,
 .bower-badge__link {
   position: absolute;
+  width: 100%;
+}
+
+.bower-badge__clipboard__input {
+  width: 100%;
+}
+
+/* Unselected state */
+
+.bower-badge__link {
+  -webkit-transform: perspective(400px) translate3d(0,0,0);
+  -ms-transform: perspective(400px) translate3d(0,0,0);
+  transform: perspective(400px) translate3d(0,0,0);
+}
+
+.bower-badge__clipboard {
+  -webkit-transform: perspective(400px) translate3d(0,0,-200px);
+  -ms-transform: perspective(400px) translate3d(0,0,-200px);
+  transform: perspective(400px) translate3d(0,0,-200px);
+  opacity: 0;
 }
 
 /* Selected state */
 
-.bower-badge__clipboard,
-.bower-badge__link {
-  -webkit-backface-visibility: hidden;
-  -ms-backface-visibility: hidden;
-  backface-visibility: hidden;
-}
-
 #install-instruction:target {
-  -webkit-transform: perspective(400px) rotateX(0deg);
-  -ms-transform: perspective(400px) rotateX(0deg);
-  transform: perspective(400px) rotateX(0deg);
+  -webkit-transform: perspective(400px) translate3d(0,0,0);
+  -ms-transform: perspective(400px) translate3d(0,0,0);
+  transform: perspective(400px) translate3d(0,0,0);
+  opacity: 1;
 }
 
 #install-instruction:target + .bower-badge__link {
-  -webkit-transform: perspective(400px) rotateX(180deg);
-  -ms-transform: perspective(400px) rotateX(180deg);
-  transform: perspective(400px) rotateX(180deg);
+  -webkit-transform: perspective(400px) translate3d(0,10px,0) rotateX(-90deg);
+  -ms-transform: perspective(400px) translate3d(0,10px,0) rotateX(-90deg);
+  transform: perspective(400px) translate3d(0,10px,0) rotateX(-90deg);
 }
